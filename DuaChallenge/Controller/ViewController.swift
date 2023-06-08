@@ -47,7 +47,8 @@ class ViewController: UIViewController {
         }
         
         let sortedTeams = sortTeamsByPoints()
-        displayTeamsViewController.teamRankings = sortedTeams
+        //        displayTeamsViewController.teamRankings = sortedTeams
+        displayTeamsViewController.teamArray = sortedTeams
         displayTeamsViewController.teamPoints = teamPoints
         navigationController?.pushViewController(displayTeamsViewController, animated: true)
     }
@@ -145,37 +146,53 @@ extension ViewController {
                 teamPoints[homeSquad, default: 0] += 1
                 teamPoints[awaySquad, default: 0] += 1
             }
+            
+            let homeTeam = teamArray.first { $0.name == homeSquad }
+            let awayTeam = teamArray.first { $0.name == awaySquad }
+            
+            homeTeam?.goalDifference += homeGoals - awayGoals
+            awayTeam?.goalDifference += awayGoals - homeGoals
         }
     }
     
     func sortTeamsByPoints() -> [Team]{
-        let listedTeams = teamArray.sorted{ (team1, team2) in
+        let sortedTeams = teamArray.sorted { team1, team2 in
             let points1 = teamPoints[team1.name] ?? 0
             let points2 = teamPoints[team2.name] ?? 0
-            if points1 > points2 {
-                return true
-            } else if points1 < points2 {
-                return false
+            
+            if points1 != points2 {
+                return points1 > points2
             } else {
-                let goalDifference1 = calculateGoalDifference(for: team1.name)
-                let goalDifference2 = calculateGoalDifference(for: team2.name)
-                return goalDifference1 > goalDifference2
+                return team1.goalDifference > team2.goalDifference
             }
         }
-        return listedTeams
+        
+        return sortedTeams
     }
     
-    func calculateGoalDifference(for team: String) -> Int {
-        var goalDifference = 0
-        for match in fixtures {
-            if match.homeMatch.name == team {
-                goalDifference += match.homeScore - match.awayScore
-            } else if match.awayMatch.name == team {
-                goalDifference += match.awayScore - match.homeScore
-            }
-        }
-        return goalDifference
-    }
+//    func calculateGoalDifference(for team: Team){
+//        //        var goalDifference = 0
+//        //        for match in fixtures {
+//        //            if match.homeMatch.name == team {
+//        //                goalDifference += match.homeScore - match.awayScore
+//        //            } else if match.awayMatch.name == team {
+//        //                goalDifference += match.awayScore - match.homeScore
+//        //            }
+//        //        }
+//        //        print("This is goal difference: \(goalDifference)")
+//        //        return goalDifference
+//        for team in teamArray {
+//            var goalDifference = 0
+//            for match in fixtures {
+//                if match.homeMatch.name == team.name {
+//                    goalDifference += match.homeScore - match.awayScore
+//                } else if match.awayMatch.name == team.name {
+//                    goalDifference += match.awayScore - match.homeScore
+//                }
+//            }
+//            team.goalDifference = goalDifference
+//        }
+//    }
 }
 
 //MARK: - TableView delegate methods
