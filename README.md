@@ -5,8 +5,8 @@ Tap on a team to see their logo, coach's name, and goals scored. TeamRank offers
 
 
 The Challange 
-(```)
-Create a Team class. 
+
+[x]Create a Team class. 
 Generate 20 unique soccer teams with random names and assign initial points to each team.
 Implement logic to ensure that each team plays every other team twice, both home and away.
 For each fixture, generate a random number between 0 and 5 and determine the winner.
