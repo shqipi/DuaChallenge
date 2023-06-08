@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupTableView()
         
     }
@@ -31,13 +30,6 @@ class ViewController: UIViewController {
         resultsTableView.dataSource = self
         resultsTableView.register(UINib(nibName: "TeamCell", bundle: nil), forCellReuseIdentifier: "TeamCell")
         resultsTableView.reloadData()
-        
-        //        let sortedTeams = sortTeamsByPoints()
-        //        for (index, team) in sortedTeams.enumerated() {
-        //            let rank = index + 1
-        //            let points = "\(teamPoints[team.points] ?? 0)"
-        //            print("Rank \(rank): \(team), Points: \(points), with goal difference: ")
-        //        }
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -60,45 +52,45 @@ extension ViewController {
     
     // Function to generated teams and append them to teamArray that is of type Team.
     func generateTeam() {
-        let team1 = Team(name: "Team Dua1", points: 0, teamLogo: "arsenal", coachName: "", goalDifference: 0, city: "")
+        let team1 = Team(name: "Team Dua1", points: 0, teamLogo: "arsenal", coachName: "Coach1", goalDifference: 0, city: "city1")
         teamArray.append(team1)
-        let team2 = Team(name: "Team Dua2", points: 0, teamLogo: "bayern", coachName: "", goalDifference: 0, city: "")
+        let team2 = Team(name: "Team Dua2", points: 0, teamLogo: "bayern", coachName: "Coach2", goalDifference: 0, city: "city2")
         teamArray.append(team2)
-        let team3 = Team(name: "Team Dua3", points: 0, teamLogo: "chelsea", coachName: "", goalDifference: 0, city: "")
+        let team3 = Team(name: "Team Dua3", points: 0, teamLogo: "chelsea", coachName: "Coach3", goalDifference: 0, city: "city3")
         teamArray.append(team3)
-        let team4 = Team(name: "Team Dua4", points: 0, teamLogo: "ajax", coachName: "", goalDifference: 0,city: "")
+        let team4 = Team(name: "Team Dua4", points: 0, teamLogo: "ajax", coachName: "Coach4", goalDifference: 0,city: "city4")
         teamArray.append(team4)
-        let team5 = Team(name: "Team Dua5", points: 0, teamLogo: "manchester", coachName: "", goalDifference: 0,city: "")
+        let team5 = Team(name: "Team Dua5", points: 0, teamLogo: "manchester", coachName: "Coach5", goalDifference: 0,city: "city5")
         teamArray.append(team5)
-        let team6 = Team(name: "Team Dua6", points: 0, teamLogo: "chelsea", coachName: "", goalDifference: 0,city: "")
+        let team6 = Team(name: "Team Dua6", points: 0, teamLogo: "chelsea", coachName: "Coach6", goalDifference: 0,city: "city6")
         teamArray.append(team6)
-        let team7 = Team(name: "Team Dua7", points: 0, teamLogo: "manchesterc", coachName: "", goalDifference: 0,city: "")
+        let team7 = Team(name: "Team Dua7", points: 0, teamLogo: "manchesterc", coachName: "Coach7", goalDifference: 0,city: "city7")
         teamArray.append(team7)
-        let team8 = Team(name: "Team Dua8", points: 0, teamLogo: "milano", coachName: "", goalDifference: 0,city: "")
+        let team8 = Team(name: "Team Dua8", points: 0, teamLogo: "milano", coachName: "Coach8", goalDifference: 0,city: "city8")
         teamArray.append(team8)
-        let team9 = Team(name: "Team Dua9", points: 0, teamLogo: "juventus", coachName: "", goalDifference: 0,city: "")
+        let team9 = Team(name: "Team Dua9", points: 0, teamLogo: "juventus", coachName: "Coach9", goalDifference: 0,city: "city9")
         teamArray.append(team9)
-        let team10 = Team(name: "Team Dua10", points: 0, teamLogo: "paris", coachName: "", goalDifference: 0,city: "")
+        let team10 = Team(name: "Team Dua10", points: 0, teamLogo: "paris", coachName: "Coach10", goalDifference: 0,city: "city10")
         teamArray.append(team10)
-        let team11 = Team(name: "Team Dua11", points: 0, teamLogo: "real", coachName: "", goalDifference: 0,city: "")
+        let team11 = Team(name: "Team Dua11", points: 0, teamLogo: "real", coachName: "Coach11", goalDifference: 0,city: "city11")
         teamArray.append(team11)
-        let team12 = Team(name: "Team Dua12", points: 0, teamLogo: "roma", coachName: "", goalDifference: 0,city: "")
+        let team12 = Team(name: "Team Dua12", points: 0, teamLogo: "roma", coachName: "Coach12", goalDifference: 0,city: "city12")
         teamArray.append(team12)
-        let team13 = Team(name: "Team Dua13", points: 0, teamLogo: "barcelona", coachName: "", goalDifference: 0,city: "")
+        let team13 = Team(name: "Team Dua13", points: 0, teamLogo: "barcelona", coachName: "Coach13", goalDifference: 0,city: "city13")
         teamArray.append(team13)
-        let team14 = Team(name: "Team Dua14", points: 0, teamLogo: "inter", coachName: "", goalDifference: 0,city: "")
+        let team14 = Team(name: "Team Dua14", points: 0, teamLogo: "inter", coachName: "Coach14", goalDifference: 0,city: "city14")
         teamArray.append(team14)
-        let team15 = Team(name: "Team Dua15", points: 0, teamLogo: "bvb", coachName: "", goalDifference: 0,city: "")
+        let team15 = Team(name: "Team Dua15", points: 0, teamLogo: "bvb", coachName: "Coach15", goalDifference: 0,city: "city15")
         teamArray.append(team15)
-        let team16 = Team(name: "Team Dua16", points: 0, teamLogo: "vlora", coachName: "", goalDifference: 0,city: "")
+        let team16 = Team(name: "Team Dua16", points: 0, teamLogo: "vlora", coachName: "Coach16", goalDifference: 0,city: "city16")
         teamArray.append(team16)
-        let team17 = Team(name: "Team Dua17", points: 0, teamLogo: "celtic", coachName: "", goalDifference: 0,city: "")
+        let team17 = Team(name: "Team Dua17", points: 0, teamLogo: "celtic", coachName: "Coach17", goalDifference: 0,city: "city17")
         teamArray.append(team17)
-        let team18 = Team(name: "Team Dua18", points: 0, teamLogo: "bilbao", coachName: "", goalDifference: 0,city: "")
+        let team18 = Team(name: "Team Dua18", points: 0, teamLogo: "bilbao", coachName: "Coach18", goalDifference: 0,city: "city18")
         teamArray.append(team18)
-        let team19 = Team(name: "Team Dua19", points: 0, teamLogo: "sporting", coachName: "", goalDifference: 0,city: "")
+        let team19 = Team(name: "Team Dua19", points: 0, teamLogo: "sporting", coachName: "Coach19", goalDifference: 0,city: "city19")
         teamArray.append(team19)
-        let team20 = Team(name: "Team Dua20", points: 0, teamLogo: "tottenham", coachName: "", goalDifference: 0,city: "")
+        let team20 = Team(name: "Team Dua20", points: 0, teamLogo: "tottenham", coachName: "Coach20", goalDifference: 0,city: "city20")
         teamArray.append(team20)
         
     }
@@ -122,7 +114,6 @@ extension ViewController {
             }
         }
         fixtures.shuffle()
-        
     }
     
     func generateRandomScoresAndPoints() {
@@ -169,30 +160,6 @@ extension ViewController {
         
         return sortedTeams
     }
-    
-//    func calculateGoalDifference(for team: Team){
-//        //        var goalDifference = 0
-//        //        for match in fixtures {
-//        //            if match.homeMatch.name == team {
-//        //                goalDifference += match.homeScore - match.awayScore
-//        //            } else if match.awayMatch.name == team {
-//        //                goalDifference += match.awayScore - match.homeScore
-//        //            }
-//        //        }
-//        //        print("This is goal difference: \(goalDifference)")
-//        //        return goalDifference
-//        for team in teamArray {
-//            var goalDifference = 0
-//            for match in fixtures {
-//                if match.homeMatch.name == team.name {
-//                    goalDifference += match.homeScore - match.awayScore
-//                } else if match.awayMatch.name == team.name {
-//                    goalDifference += match.awayScore - match.homeScore
-//                }
-//            }
-//            team.goalDifference = goalDifference
-//        }
-//    }
 }
 
 //MARK: - TableView delegate methods
@@ -206,12 +173,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let match = fixtures[indexPath.row]
         cell.textLabel?.text = "\(String(describing: match.homeMatch.name)) \t\t\(match.homeScore) - \(match.awayScore) \t\t \(String(describing: match.awayMatch.name))"
         return cell
-        //        let team = teamArray[indexPath.row]
-        //        let points = teamPoints[team.name] ?? 0
-        //        let goalDifference = calculateGoalDifference(for: team.name)
-        //
-        //        cell.textLabel?.text = "\(team.name) \t\t Points: \(points) \t\t Goal Difference: \(goalDifference)"
-        //        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
