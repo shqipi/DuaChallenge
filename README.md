@@ -8,6 +8,7 @@ Tap on a team to see their logo, coach's name, and goals scored. TeamRank offers
 
 
 The Challange 
+
 [x]```Create a Team class.```
 
 [X]```Generate 20 unique soccer teams with random names and assign initial points to each team.```
