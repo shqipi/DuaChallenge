@@ -37,9 +37,7 @@ class ViewController: UIViewController {
         guard let displayTeamsViewController = storyboard?.instantiateViewController(withIdentifier: "DisplayTeamsViewController") as? DisplayTeamsViewController else {
             return
         }
-        
         let sortedTeams = sortTeamsByPoints()
-        //        displayTeamsViewController.teamRankings = sortedTeams
         displayTeamsViewController.teamArray = sortedTeams
         displayTeamsViewController.teamPoints = teamPoints
         navigationController?.pushViewController(displayTeamsViewController, animated: true)
@@ -151,9 +149,17 @@ extension ViewController {
             let points1 = teamPoints[team1.name] ?? 0
             let points2 = teamPoints[team2.name] ?? 0
             
-            if points1 != points2 {
-                return points1 > points2
+            print(points1)
+            print(points2)
+            
+            if points1 > points2 {
+                print("We are here 1")
+                return true
+            } else if points1 < points2 {
+                print("We are here 2")
+                return false
             } else {
+                print("We are here 3")
                 return team1.goalDifference > team2.goalDifference
             }
         }
